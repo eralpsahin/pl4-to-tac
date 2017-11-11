@@ -1,0 +1,50 @@
+%{
+#include "include.h"
+#include "pl4.tab.h"
+
+%}
+%%
+
+(-?[1-9][0-9]*)|(0) {
+yylval.str=strdup(yytext);
+return tINTNUM;
+
+}
+"proc" return tPROC;
+"endproc" return tENDPROC;
+"," return tCOMA;
+"main" return tMAIN;
+"endmain" return tENDMAIN;
+"begin" return tBEGIN;
+"end" return tEND;
+"if" return tIF;
+"then" return tTHEN;
+"else" return tELSE;
+"while" return tWHILE;
+"(" return tLEFTBRACKET;
+")" return tRIGHTBRACKET;
+"and" {
+    return tAND;
+
+}
+"==" {
+    return tISEQUAL;
+}
+"=" return tASSIGN;
+"false" return tFALSE;
+"true" return tTRUE;
+
+";" return tSEMICOLON;
+[_a-zA-Z][_a-zA-Z0-9]* {
+yylval.str=strdup(yytext);
+return tID;
+}
+[ \t]+
+[\n] {
+    newline = newline + 1;
+}
+[\r\n] {
+    newline = newline + 1;
+}
+. return yytext[0];
+%%

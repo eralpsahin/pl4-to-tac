@@ -1,0 +1,27 @@
+proc
+    myAwesomeFunction(int,int,str)
+    hel = 4 + 4;
+endproc
+proc
+    myAwesomeFunction(str,str,str)
+    suchoverload = much + coding;
+endproc
+main
+    while( a < 4)
+        begin
+        if(elma and armut * 2 + 3)
+            then
+            begin
+                myAnotherAwesomeFunction(a,8+8,2,4);
+            end
+            else
+            begin
+                c = 45 + 43;
+            end
+    end
+
+    calling = correctly + now;
+    myAwesomeFunction(int,int,str);
+
+    Longlong  = a * b + c * d + e * f;
+endmain
